@@ -20,5 +20,3 @@ O site é composto por três páginas interligadas:
 * **HTML:** Estruturação semântica de todo o conteúdo (`<header>`, `<main>`, `<section>`, `<nav>`, etc).
 * **CSS:** Estilização visual, cores, fontes e organização de layout.
 * **Flexbox:** Utilizado especificamente para a construção da galeria de imagens de forma responsiva e alinhada.
-* **CSS3:** Estilização visual, cores, fontes e organização de layout.
-* **Flexbox:** Utilizado especificamente para a construção da galeria de imagens de forma responsiva e alinhada.
