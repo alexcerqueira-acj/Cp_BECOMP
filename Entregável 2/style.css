@@ -1,0 +1,286 @@
+/* 
+--------------------
+CONFIGURAÇÕES GERAIS
+--------------------
+*/
+
+/* Geral*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuração Body */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #000000; /* Mudamos para preto para um visual Pro/Cinematográfico */
+    color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+}
+
+/* CSS Grid */
+
+.layout-principal {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 30px;
+}
+
+/* 
+------------
+HEADER e NAV
+------------
+*/
+.cabecalho-principal {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.titulo-gradiente {
+    font-size: 2.8rem;
+    font-weight: 700;
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid #f5f5f7; /* Requisito: Borda visível */
+    border-radius: 14px;
+    /* Requisito: Gradiente no Texto */
+    background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* BARRA DE NAVEGAÇÃO (Flexbox) */
+.barra-navegacao {
+    background-color: rgba(29, 29, 31, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 18px 30px;
+    border-radius: 16px;
+}
+
+.lista-navegacao {
+    list-style: none;
+    display: flex; /* Requisito: Flexbox horizontal */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lista-navegacao a {
+    text-decoration: none;
+    color: #a1a1a6;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Requisito: Hover Laranja */
+.lista-navegacao a:hover {
+    color: #FF8C00;
+}
+
+/* 
+------------------
+FOTOS DA PÁGINA INICIAL
+-------------------
+*/
+
+.grade-categorias {
+    display: grid;
+    /* 2 colunas Grid no Desktop, virando 1 no celular */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.janela-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* O Container do Card */
+.janela-card {
+    position: relative;
+    height: 450px;
+    border-radius: 24px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* A Imagem de Fundo */
+.foto-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    
+    /* Começa Preto e Branco */
+    filter: grayscale(100%) brightness(70%); 
+    
+    /* Transição suave de 0.6 segundos */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+}
+
+/* Links */
+.foto-smartphones { 
+    background-color: #1d1d1f; /* Cor de fundo caso a imagem falhe */
+    background-image: url('src/smartphone.png'); 
+}
+
+.foto-computadores { 
+    background-color: #1d1d1f;
+    background-image: url('src/computador.png'); 
+}
+
+.foto-fones { 
+    background-color: #1d1d1f;
+    background-image: url('src/fone.png'); 
+}
+
+.foto-acessorios { 
+    background-color: #1d1d1f;
+    background-image: url('src/relógio.png'); 
+}
+
+/* O CONTEÚDO EM CIMA DA FOTO */
+.overlay-conteudo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    /* Gradiente escuro no fundo do texto para garantir leitura */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.overlay-conteudo h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.overlay-conteudo p {
+    color: #a1a1a6;
+    font-size: 1.1rem;
+}
+
+.falsa-seta {
+    color: #0071e3; /* Azul Apple */
+    font-weight: 500;
+    margin-top: 8px;
+    transition: transform 0.3s ease;
+}
+
+/*
+ANIMAÇÃO DAS FOTOS INICIAIS
+*/
+
+/* Quando passa o mouse */
+.janela-link:hover .foto-bg {
+    filter: grayscale(0%) brightness(90%); /* Cor e brilho */
+    transform: scale(1.05); /* Ampliação sutil de 5% */
+}
+
+.janela-link:hover .falsa-seta {
+    transform: translateX(5px); /* A setinha "Saber mais" se move para o lado */
+}
+
+/* Rodapé */
+
+.rodape-pagina {
+    text-align: center;
+    padding: 40px;
+    color: #6e6e73;
+    font-size: 0.9rem;
+}
+
+/* Título interno de cada aba */
+.titulo-pagina-interna {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f5f5f7;
+}
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+}
+
+/* Garante que os cards dentro da grade tenham o mesmo tamanho e formato */
+.card-produto {
+    background-color: #1a1a1a; 
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito sutil ao passar o mouse */
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Espaço da imagem quadrada no topo */
+.produto-foto-bg {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-color: #333; 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-size: cover;       
+    background-position: center; 
+}
+
+/* Textos e Botão */
+.produto-info h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.produto-info .descricao {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.produto-info .preco {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.botao-comprar {
+    background-color: #007bff; /* O azul padrão do botão da imagem */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.botao-comprar:hover {
+    background-color: #0056b3;
+}
