@@ -16,7 +16,7 @@ CONFIGURAÇÕES GERAIS
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #000000; /* Mudamos para preto para um visual Pro/Cinematográfico */
+    background-color: #000000; /*muda para preto*/
     color: #f5f5f7;
     display: flex;
     justify-content: center;
