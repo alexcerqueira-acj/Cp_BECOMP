@@ -49,6 +49,36 @@ HTML: Estruturação semântica limpa da loja virtual (uso correto de <header>, 
 
 CSS: Estilização visual robusta com foco em Dark Mode (fundo escuro e tipografia clara), manipulação de proporção de imagens (aspect-ratio), propriedades de filtro (grayscale) e transições físicas suaves (transform, cubic-bezier).
 
+--------------
+#ENTREGÁVEL 3
+--------------
+
+🩴 Chinelos Tijuka
+
+Este projeto foi desenvolvido como um trabalho prático para consolidar e expandir os conhecimentos em Desenvolvimento Web Front-End, unindo estruturação semântica, estilização avançada e programação assíncrona/dinâmica no lado do cliente.
+🎯 Objetivo do Projeto
+
+O objetivo principal deste site é construir uma interface de e-commerce completa, funcional e de alto padrão visual para uma marca de chinelos premium. O foco técnico absoluto do projeto foi a integração entre o design responsivo (utilizando uma paleta sofisticada em Bordô e Bege) e a interatividade lógica com JavaScript, englobando a manipulação de dados em memória, filtros de busca em tempo real e a persistência de estados no navegador.
+✨ Funcionalidades
+
+O site é composto por três páginas totalmente integradas e responsivas:
+
+Página Inicial (index.html): Apresenta a identidade da marca e conta com um slider (carrossel) de imagens automatizado e manual através de botões direcionais. O banner utiliza um sistema de renderização inteligente que se adapta sem cortes a diferentes proporções de imagem.
+
+Lojinha (loja.html): Uma vitrine dinâmica onde a grade de produtos é injetada diretamente via JavaScript através de uma base de dados interna. Conta com um sistema de busca em tempo real que filtra os itens instantaneamente por modelo ou por tags associadas, sem necessidade de recarregar a página.
+
+Página de Acesso (login.html): Um sistema de autenticação completo que alterna dinamicamente entre as telas de "Login" e "Registro" na mesma interface. Utiliza regras de validação para impedir e-mails duplicados e gerencia o estado da sessão do usuário.
+
+Efeito Visual de Conversão: Alinhado às técnicas modernas de páginas de vendas, os cards de produtos e os elementos do slider contam com um efeito de transição fluido via hover, que altera a imagem de preto e branco para colorido, acompanhado de um zoom óptico sutil.
+
+🛠️ Tecnologias Utilizadas
+
+HTML: Estruturação semântica avançada de todas as interfaces, fazendo uso correto de tags estruturais (<header>, <main>, <section>, <nav>) e de formulários estruturados para captura de dados de forma segura.
+
+CSS: Arquitetura visual baseada em variáveis de estilização (:root) para consistência da paleta de cores. Aplicação de filtros físicos (grayscale), manipulação de escala (transform: scale) e responsividade avançada através de Media Queries para garantir adaptabilidade perfeita em dispositivos móveis.
+
+JavaScript (ES6): Responsável por toda a inteligência e dinamismo do projeto, utilizando manipulação do DOM, manipulação assíncrona de tempo (setInterval para o carrossel), métodos de array (filter e includes para o motor de busca) e persistência de dados localizados através da API localStorage para o fluxo de login e controle de navegação do usuário logado.
+
 CSS Grid: Protagonista do projeto. Utilizado obrigatoriamente para construir o esqueleto macro da página e para garantir a distribuição perfeitamente simétrica da grade principal de produtos (Matriz 3x2).
 
 Flexbox: Utilizado para o micro-layout, sendo responsável por organizar a barra de navegação perfeitamente espaçada e empilhar internamente os textos e botões dentro dos cards de cada produto.
