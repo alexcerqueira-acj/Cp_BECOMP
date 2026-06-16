@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinelos Confort - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Chinelos Tijuka</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="loja.html">Lojinha</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container fade-in">
+        <div class="auth-box">
+            <h2 id="auth-title">Acesse sua Conta</h2>
+            
+            <div id="mensagem" class="msg"></div>
+
+            <form id="auth-form" class="auth-form">
+                <input type="text" id="nome" placeholder="Seu Nome Completo" style="display: none;">
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <button type="submit" id="auth-btn">Entrar</button>
+            </form>
+
+            <p class="toggle-auth" id="toggle-texto">
+                Não tem uma conta? <span onclick="alternarModoAuth()">Registre-se</span>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chinelos Tijuka. Redes Sociais: @chinelostijuka</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
