@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinelos Tijuka - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (!localStorage.getItem("usuarioLogado")) {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Chinelos Tijuka</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-ativo">Home</a></li>
+                <li><a href="loja.html">Lojinha</a></li>
+                <li><a href="login.html" id="nav-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="fade-in">
+
+        <section class="slider-container">
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <img src="src/tijuka.png"
+                         onerror="this.src='https://placehold.co/1200x400/722F37/F5F5DC?text=Chinelos+Tijuka'"
+                         alt="Banner Chinelos Tijuka">
+                </div>
+                <div class="slide">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1324216/chinelo_havaianas_feminino_slim_point_rose_gold_be_2_20250910141323_55f2b5f657ce.jpg"
+                         onerror="this.src='https://placehold.co/1200x400/9b4451/F5F5DC?text=Nova+Coleção'"
+                         alt="Banner 2 - Nova Coleção">
+                </div>
+                <div class="slide">
+                    <img src="https://acdn-us.mitiendanube.com/stores/004/862/253/products/1000190208-a4c8e78ed431fdacf917649579979258-1024-1024.webp"
+                         onerror="this.src='https://placehold.co/1200x400/722F37/F5F5DC?text=Promoções'"
+                         alt="Banner 3 - Promoções">
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="mudarSlide(1)">&#10095;</button>
+        </section>
+
+        <section class="cta-section">
+            <h2>O Conforto que seus pés merecem</h2>
+            <p>Os melhores chinelos tijukanos com descontos exclusivos.</p>
+            <a href="loja.html" class="btn-cta">Ver Produtos</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chinelos Tijuka. Redes Sociais: @chinelostijuka</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

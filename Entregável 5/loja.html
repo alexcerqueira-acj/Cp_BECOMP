@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinelos Tijuka - Loja</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (!localStorage.getItem("usuarioLogado")) {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Chinelos Tijuka</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="loja.html" class="nav-ativo">Lojinha</a></li>
+                <li><a href="login.html" id="nav-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="fade-in">
+        <h2 class="titulo-loja">Confira nossos produtos</h2>
+
+        <section class="search-section">
+            <input type="text" id="input-busca" placeholder="Buscar por modelo, cor ou estilo..." autocomplete="off" oninput="buscarProdutos()">
+            <button onclick="buscarProdutos()">Buscar</button>
+        </section>
+
+        <section class="grid-produtos" id="vitrine">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chinelos Tijuka. Redes Sociais: @chinelostijuka</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

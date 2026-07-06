@@ -1,0 +1,230 @@
+/* CONFIGURAÇÕES GERAIS E VARIÁVEIS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bordo:        #722F37;
+    --bordo-claro:  #9b4451;
+    --bege:         #F5F5DC;
+    --bege-escuro:  #E6E6C8;
+    --texto-escuro: #333333;
+    --texto-claro:  #ffffff;
+    --transicao:    0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background-color: var(--bege);
+    color: var(--texto-escuro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--bordo);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.logo h1 { color: var(--bege); font-weight: 700; font-size: 1.5rem; }
+nav ul  { list-style: none; display: flex; gap: 20px; }
+nav a   {
+    text-decoration: none; color: var(--bege); font-weight: 600;
+    transition: var(--transicao); padding: 5px 10px; border-radius: 5px;
+}
+nav a:hover { background-color: var(--bege); color: var(--bordo); }
+
+/* Página atual destacada no nav */
+nav a.nav-ativo {
+    background-color: rgba(255,255,255,0.2);
+    border-bottom: 2px solid var(--bege);
+}
+
+/* Botão de logout no nav (quando usuário está logado) */
+a.nav-logout {
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+a.nav-logout:hover {
+    background-color: #cc0000;
+    color: var(--bege);
+}
+
+/* --- ANIMAÇÃO --- */
+.fade-in { animation: fadeIn 1s ease-in-out; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- EFEITO P&B → COR NAS IMAGENS --- */
+.card-produto, .slide { overflow: hidden; }
+
+.card-produto img {
+    width: 100%; display: block; object-fit: cover;
+    filter: grayscale(100%); transform: scale(1);
+    transition: filter .5s ease, transform .5s ease;
+}
+.card-produto:hover img { filter: grayscale(0%); transform: scale(1.08); cursor: pointer; }
+
+.slide img {
+    width: 100%; height: 100%; display: block; object-fit: contain;
+    filter: grayscale(100%); transform: scale(1);
+    transition: filter .5s ease, transform .5s ease;
+}
+.slide:hover img { filter: grayscale(0%); transform: scale(1.02); cursor: pointer; }
+
+/* --- SLIDER --- */
+.slider-container {
+    width: 100%; max-width: 1200px; margin: 2rem auto;
+    position: relative; border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    overflow: hidden;
+}
+.slides { display: flex; transition: transform .5s ease-in-out; }
+.slide  {
+    min-width: 100%; height: 400px; background-color: var(--bege-escuro);
+    display: flex; align-items: center; justify-content: center;
+}
+.slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background-color: rgba(114,47,55,.7); color: var(--bege);
+    border: none; padding: 15px 20px; cursor: pointer;
+    font-size: 1.5rem; border-radius: 50%; transition: var(--transicao);
+    z-index: 10;
+}
+.slider-btn:hover { background-color: var(--bordo); }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* --- CTA (Home) --- */
+.cta-section { text-align: center; margin: 3rem 5%; }
+.cta-section h2 { color: var(--bordo); margin-bottom: 0.5rem; }
+.cta-section p  { color: var(--texto-escuro); margin-bottom: 1.5rem; }
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--bordo);
+    color: var(--bege);
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transicao);
+    box-shadow: 0 4px 12px rgba(114,47,55,0.3);
+}
+.btn-cta:hover {
+    background-color: var(--bordo-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(114,47,55,0.4);
+}
+
+.titulo-loja { text-align: center; color: var(--bordo); margin-top: 2rem; }
+
+/* --- BUSCA --- */
+.search-section { text-align: center; margin: 2rem 0; }
+.search-section input {
+    padding: 12px; width: 60%; max-width: 400px;
+    border: 2px solid var(--bordo); border-radius: 25px 0 0 25px; outline: none;
+    background-color: #fff;
+}
+.search-section input:focus { border-color: var(--bordo-claro); }
+.search-section button {
+    padding: 12px 25px; background-color: var(--bordo); color: var(--bege);
+    border: 2px solid var(--bordo); border-radius: 0 25px 25px 0;
+    cursor: pointer; font-weight: bold; transition: var(--transicao);
+}
+.search-section button:hover { background-color: var(--bordo-claro); }
+
+/* --- GRADE DE PRODUTOS --- */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; padding: 0 5%; margin-bottom: 3rem;
+}
+.card-produto {
+    background-color: #fff; border-radius: 15px; padding: 15px;
+    text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    transition: box-shadow var(--transicao), transform var(--transicao);
+}
+.card-produto:hover { box-shadow: 0 10px 25px rgba(0,0,0,.15); transform: translateY(-3px); }
+.card-produto img   { height: 200px; border-radius: 10px; background-color: var(--bege-escuro); }
+.card-produto h3    { color: var(--bordo); margin: 15px 0 5px; }
+.card-produto .preco { font-size: 1.2rem; font-weight: bold; color: var(--bordo-claro); margin-bottom: 15px; }
+.btn-comprar {
+    background-color: var(--bordo); color: var(--bege); border: none;
+    padding: 10px 20px; border-radius: 20px; cursor: pointer;
+    transition: var(--transicao); width: 100%;
+}
+.btn-comprar:hover { background-color: var(--bordo-claro); }
+
+/* --- AUTENTICAÇÃO --- */
+.auth-container {
+    flex: 1; display: flex; justify-content: center;
+    align-items: center; padding: 2rem;
+}
+.auth-box {
+    background-color: #fff; padding: 3rem; border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1); width: 100%;
+    max-width: 400px; text-align: center;
+}
+.auth-box h2 { color: var(--bordo); margin-bottom: 1.5rem; }
+.auth-form input {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    border: 1px solid #ccc; border-radius: 8px; background-color: var(--bege);
+    font-size: 0.95rem;
+}
+.auth-form input:focus { border-color: var(--bordo); outline: none; }
+.auth-form button {
+    width: 100%; padding: 12px; background-color: var(--bordo); color: var(--bege);
+    border: none; border-radius: 8px; font-weight: bold;
+    cursor: pointer; font-size: 1rem; transition: var(--transicao);
+}
+.auth-form button:hover { background-color: var(--bordo-claro); }
+.toggle-auth { margin-top: 15px; font-size: .9rem; }
+.toggle-auth span { color: var(--bordo); cursor: pointer; font-weight: bold; text-decoration: underline; }
+
+/* Mensagens de feedback */
+.msg { padding: 10px; margin-bottom: 15px; border-radius: 5px; display: none; font-weight: bold; font-size: .9rem; }
+.msg.error   { background-color: #ffcccc; color: #cc0000; display: block; }
+.msg.success { background-color: #ccffcc; color: #006600; display: block; }
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--bordo); color: var(--bege);
+    text-align: center; padding: 1.5rem 0; margin-top: auto;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Tablet (até 1024px) */
+@media (max-width: 1024px) {
+    .grid-produtos { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .slider-container { margin: 1.5rem 2%; }
+    .slide { height: 320px; }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .slide { height: 220px; }
+    .search-section { padding: 0 5%; display: flex; flex-direction: column; }
+    .search-section input  { width: 100%; border-radius: 25px; margin-bottom: 10px; }
+    .search-section button { width: 100%; border-radius: 25px; }
+    .auth-box { padding: 2rem 1.5rem; }
+    .grid-produtos { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+}
+
+/* Telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    .logo h1 { font-size: 1.2rem; }
+    .slide { height: 170px; }
+    .grid-produtos { grid-template-columns: 1fr 1fr; padding: 0 3%; }
+    .card-produto img { height: 150px; }
+}
